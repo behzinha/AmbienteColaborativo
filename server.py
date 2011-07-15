@@ -1,16 +1,12 @@
 # -*- coding: utf-8 -*-
 import Pyro.naming
 import Pyro.core
-from Pyro.errors import PyroError,NamingError
+from Pyro.errors import NamingError
 
 import principal
 
-###### testclass Pyro object
-
 class ambprincipal(Pyro.core.ObjBase, principal.ambprincipal):
-        pass
-
-###### main server program
+	pass
 
 def main():
         Pyro.core.initServer()
@@ -23,10 +19,9 @@ def main():
 
         # connect a new object implementation (first unregister previous one)
         try:
-                # 'test' is the name by which our object will be known to the outside world
-                ns.unregister('AmbienteColaborativo')
+            ns.unregister('AmbienteColaborativo')
         except NamingError:
-                pass
+            pass
 
         # connect new object implementation
         daemon.connect(ambprincipal(),'AmbienteColaborativo')
