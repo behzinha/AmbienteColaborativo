@@ -1,0 +1,17 @@
+﻿Execução: 3 terminais
+
+1º:
+pyro-ns
+
+
+2º:
+python testserver.py
+
+
+3°:
+python testclient.py
+
+
+
+You might want to peek in the Name Server:
+pyro-nsc listall
